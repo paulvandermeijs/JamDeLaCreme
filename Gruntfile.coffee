@@ -8,18 +8,33 @@ module.exports = (grunt) ->
 					style: 'expanded'
 					compass: true
 				files: [{
-					expand: true,
-					cwd: 'scss',
-					src: ['*.scss'],
-					dest: 'public_html/css',
+					expand: true
+					cwd: 'scss'
+					src: ['*.scss']
+					dest: 'public_html/css'
 					ext: '.css'
 				}]
 
+		coffee:
+			dev:
+				files: [{
+					expand: true
+					cwd: 'coffee'
+					src: ['*.coffee']
+					dest: 'public_html/js'
+					ext: '.js'
+				}]
+
 		watch:
-			files: ['scss/**']
-			tasks: ['sass']
+			coffee:
+				files: ['coffee/**']
+				tasks: ['coffee']
+			sass:
+				files: ['scss/**']
+				tasks: ['sass']
 
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-contrib-sass'
+	grunt.loadNpmTasks 'grunt-contrib-coffee'
 
 	grunt.registerTask 'default', ['sass']
