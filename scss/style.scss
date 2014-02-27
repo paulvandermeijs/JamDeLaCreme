@@ -119,7 +119,7 @@ a {
 
 	@include transform(rotate3d(45, 45, 0, 0deg));
 
-	a:hover & {
+	a:hover &, a.hover & {
 		@include transform(rotate3d(45, 45, 0, -180deg));
 	}
 }
@@ -127,7 +127,7 @@ a {
 .back {
 	@include transform(rotate3d(45, 45, 0, -180deg));
 
-	a:hover & {
+	a:hover &, a.hover & {
 		@include transform(rotate3d(45, 45, 0, 0deg));
 	}
 }

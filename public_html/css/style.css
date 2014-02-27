@@ -1,3 +1,4 @@
+@import "//fonts.googleapis.com/css?family=Schoolbell";
 /**
  * Jam de la Creme
  *
@@ -14,7 +15,6 @@
 /*
  * Imports
  */
-@import "//fonts.googleapis.com/css?family=Schoolbell";
 /*
  * Definitions
  */
@@ -109,7 +109,7 @@ a {
   -o-transform: rotate3d(45, 45, 0, 0deg);
   transform: rotate3d(45, 45, 0, 0deg);
 }
-a:hover .front {
+a:hover .front, a.hover .front {
   -webkit-transform: rotate3d(45, 45, 0, -180deg);
   -moz-transform: rotate3d(45, 45, 0, -180deg);
   -ms-transform: rotate3d(45, 45, 0, -180deg);
@@ -124,7 +124,7 @@ a:hover .front {
   -o-transform: rotate3d(45, 45, 0, -180deg);
   transform: rotate3d(45, 45, 0, -180deg);
 }
-a:hover .back {
+a:hover .back, a.hover .back {
   -webkit-transform: rotate3d(45, 45, 0, 0deg);
   -moz-transform: rotate3d(45, 45, 0, 0deg);
   -ms-transform: rotate3d(45, 45, 0, 0deg);

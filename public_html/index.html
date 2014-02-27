@@ -18,25 +18,4 @@
 	</a>
 </li>
 </script>
-<script>
-var list = document.getElementById('list'),
-	template = Handlebars.compile(document.getElementById('listItem').innerHTML);
-
-var randomColor = function randomColor() {
-	var chars = '0123456789ABCDEF'.split('');
-
-	for (var color = '#'; color.length < 7;)
-		color += chars[Math.round(Math.random() * 15)];
-
-	return color;
-};
-
-var texts = ['Meow!', 'Purrr!'];
-
-for (var i = 61; i--;) 
-	list.innerHTML += template({
-		image: (i % 15)+1, 
-		color: randomColor(), 
-		text: texts[Math.floor(Math.random() * texts.length)]
-	});
-</script>
+<script src="js/tiles.js"></script>
