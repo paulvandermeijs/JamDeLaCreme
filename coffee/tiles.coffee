@@ -19,8 +19,18 @@ for i in [0..60]
 		color: randomColor()
 		text: texts[Math.floor(Math.random() * texts.length)]
 
-for elm in list.getElementsByTagName 'a'
-	elm.addEventListener 'ontouchstart', (e) ->
-		e.preventDefault()
+# For touch devices
 
-		this.classList.toggle 'hover'
+if 'ontouchstart' in document.windowElement
+	elements = list.getElementsByTagName 'a'
+	
+	for elm in elements
+		elm.addEventListener 'click', (e) ->
+			return if this.classList.contains 'hover'
+			
+			e.preventDefault()
+
+			for _elm in elements
+				_elm.classList.remove 'hover'
+
+			this.classList.add 'hover'

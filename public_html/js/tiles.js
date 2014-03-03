@@ -1,5 +1,6 @@
 (function() {
-  var elm, i, list, randomColor, template, texts, _i, _j, _len, _ref;
+  var elements, elm, i, list, randomColor, template, texts, _i, _j, _len,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   list = document.getElementById('list');
 
@@ -25,13 +26,23 @@
     });
   }
 
-  _ref = list.getElementsByTagName('a');
-  for (_j = 0, _len = _ref.length; _j < _len; _j++) {
-    elm = _ref[_j];
-    elm.addEventListener('ontouchstart', function(e) {
-      e.preventDefault();
-      return this.classList.toggle('hover');
-    });
+  if (__indexOf.call(document.windowElement, 'ontouchstart') >= 0) {
+    elements = list.getElementsByTagName('a');
+    for (_j = 0, _len = elements.length; _j < _len; _j++) {
+      elm = elements[_j];
+      elm.addEventListener('click', function(e) {
+        var _elm, _k, _len1;
+        if (this.classList.contains('hover')) {
+          return;
+        }
+        e.preventDefault();
+        for (_k = 0, _len1 = elements.length; _k < _len1; _k++) {
+          _elm = elements[_k];
+          _elm.classList.remove('hover');
+        }
+        return this.classList.add('hover');
+      });
+    }
   }
 
 }).call(this);
