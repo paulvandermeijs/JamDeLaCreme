@@ -34,8 +34,14 @@ a {
 
 ul {
   margin: 1rem auto;
-  padding: 4.24264rem 0;
+  padding: 4.24264rem 0 0;
   width: 51rem;
+  *zoom: 1;
+}
+ul:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 li {

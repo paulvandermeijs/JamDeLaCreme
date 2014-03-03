@@ -59,8 +59,10 @@ a {
 
 ul {
 	margin: 1rem auto;
-	padding: $box-size/2 0;
+	padding: $box-size/2 0 0;
 	width: ceil($max-width*$box-size);
+
+	@include pie-clearfix;
 }
 
 li {
